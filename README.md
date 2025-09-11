@@ -43,6 +43,10 @@ Sistemos funkcijų sąrašas:
 
 # Paleidimo instrukcija
 
+# Reikalavimai:
+1. Atsisiūsti node.js
+2. Atsisiūsti MongoDB
+
 ## 1. Atidaryti aplanką, kuriame yra failas `HP.js`
 - Suraskite atsiųsto projekto katalogą, kuriame yra **`HP.js`** failas.
 - Jei naudojate **Windows Explorer**, naviguokite į tą aplanką, kuriame išsaugotas failas.
