@@ -1,5 +1,7 @@
 # Sveikatos ir fizinės būklės sekimo svetainė
 
+Dabar galima tiesiogiai pabandyti nereikia lokaliai paleisti https://klaid-health-tracker.onrender.com
+
 ## 1. Sistemos tikslas
 Svetainėje vartotojai galės susikurti profilius, stebėti savo sportavimo veiklą, registruoti maistą ir stebėti savo svorio progresą laikui bėgant. Vartotojai gali nustatyti sveikatos tikslus, laikytis pagrindinių treniruočių ir mitybos planų bei peržiūrėti pažangą asmeniniame prietaisų skydelyje. Svetainėje taip pat bus pateikiami priminimai apie treniruotes, hidrataciją ir maitinimą, pritaikytas mobiliesiems ir staliniams kompiuteriams.
 
