@@ -5,6 +5,7 @@
   "main": "Script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node HP.js"
   },
   "keywords": [],
   "author": "",
