@@ -463,14 +463,6 @@ app.delete('/delete-daily-log', async (req, res) => {
   }
 });
 
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
-
 // Nutrient Log Schema
 const nutrientLogSchema = new mongoose.Schema({
   username: { type: String, required: true }, // Link to the user
