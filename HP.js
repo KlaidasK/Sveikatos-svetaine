@@ -1,28 +1,31 @@
+require('dotenv').config();
+
+console.log("MONGODB_URI exists:", !!process.env.MONGODB_URI);
+
 const mongoose = require('mongoose');
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs'); // Import bcryptjs for password hashing
-const port = 3019;
+const bcrypt = require('bcryptjs');
 
+const port = process.env.PORT || 3019;
 const app = express();
 
-// Middleware
 app.use(express.static(__dirname));
-app.use(bodyParser.json()); // Parse JSON data
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/users', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => {
-    console.log("MongoDB connection successful");
-  })
-  .catch(err => {
-    console.error("MongoDB connection error:", err);
-  });
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log("MongoDB connection successful");
+
+        app.listen(port, '0.0.0.0', () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    })
+    .catch(err => {
+        console.error("MongoDB connection error:", err);
+        process.exit(1);
+    });
 
 // User Schema and Model
 const userSchema = new mongoose.Schema({
@@ -459,14 +462,6 @@ app.delete('/delete-daily-log', async (req, res) => {
       res.status(500).json({ error: 'Server error while deleting daily log.' });
   }
 });
-
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
 
 // Nutrient Log Schema
 const nutrientLogSchema = new mongoose.Schema({
